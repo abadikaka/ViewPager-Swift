@@ -134,6 +134,7 @@ public class ViewPager: NSObject {
         self.controller?.addChild(pageController)
         setupForAutolayout(view: pageController.view, inView: view)
         pageController.didMove(toParent: controller)
+        pageController.view.layer.cornerRadius = options.cornerRadius
         self.pageController = pageController
         
         self.pageController?.dataSource = self
