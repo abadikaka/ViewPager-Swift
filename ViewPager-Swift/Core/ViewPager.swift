@@ -60,6 +60,8 @@ public class ViewPager: NSObject {
     public init(viewController: UIViewController, containerView: UIView? = nil) {
         self.controller = viewController
         self.view = containerView ?? viewController.view
+        self.view.layer.cornerRadius = options.cornerRadius
+        self.view.clipsToBounds = true
     }
     
     
@@ -103,7 +105,7 @@ public class ViewPager: NSObject {
         
         tabContainer.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tabContainer)
-        tabContainer.layer.cornerRadius = options.cornerRadius
+        
         tabContainer.backgroundColor = options.tabViewBackgroundDefaultColor
         tabContainer.isScrollEnabled = true
         tabContainer.showsVerticalScrollIndicator = false
@@ -134,7 +136,6 @@ public class ViewPager: NSObject {
         self.controller?.addChild(pageController)
         setupForAutolayout(view: pageController.view, inView: view)
         pageController.didMove(toParent: controller)
-        pageController.view.layer.cornerRadius = options.cornerRadius
         self.pageController = pageController
         
         self.pageController?.dataSource = self
