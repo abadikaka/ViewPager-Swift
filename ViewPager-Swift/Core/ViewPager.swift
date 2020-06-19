@@ -103,7 +103,7 @@ public class ViewPager: NSObject {
         
         tabContainer.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tabContainer)
-        
+        tabContainer.layer.cornerRadius = options.cornerRadius
         tabContainer.backgroundColor = options.tabViewBackgroundDefaultColor
         tabContainer.isScrollEnabled = true
         tabContainer.showsVerticalScrollIndicator = false

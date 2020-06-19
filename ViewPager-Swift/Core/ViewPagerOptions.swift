@@ -53,6 +53,8 @@ public class ViewPagerOptions {
     public var shadowOffset: CGSize = CGSize(width: 0, height: 3)
     public var shadowRadius: CGFloat = 3
     
+    public var cornerRadius: CGFloat = 0
+    
     // Tab Indicator
     public var tabIndicatorViewHeight:CGFloat = 3
     public var tabIndicatorViewBackgroundColor:UIColor = Color.tabIndicator
